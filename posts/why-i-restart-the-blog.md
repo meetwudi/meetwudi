@@ -1,5 +1,5 @@
 ---
-title: "Quick calibration"
+title: "Why I Restarted This Blog"
 date: "2024-04-20"
 type: "snippet"
 ---
