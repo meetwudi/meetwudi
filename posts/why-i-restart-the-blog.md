@@ -1,6 +1,6 @@
 ---
 title: "Why I Restarted This Blog"
-date: "2024-04-20"
+date: "2025-12-27"
 type: "snippet"
 ---
 
