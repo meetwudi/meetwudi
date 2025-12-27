@@ -62,17 +62,24 @@ export async function getPosts(): Promise<PostSummary[]> {
       const type = data.type === "snippet" ? "snippet" : "post";
       const contentHtml = type === "snippet" ? (marked.parse(content, { async: false }) as string) : undefined;
 
-      return { slug, title, date, excerpt, type, contentHtml };
+      return {
+        slug,
+        title,
+        date,
+        excerpt,
+        type,
+        ...(contentHtml !== undefined ? { contentHtml } : {}),
+      } as PostSummary;
     }),
   );
 
-  return posts
-    .filter((post): post is PostSummary => Boolean(post))
-    .sort((a, b) => {
-      const aTime = a.date ? new Date(a.date).getTime() : 0;
-      const bTime = b.date ? new Date(b.date).getTime() : 0;
-      return bTime - aTime;
-    });
+  const validPosts = posts.filter(Boolean) as PostSummary[];
+
+  return validPosts.sort((a, b) => {
+    const aTime = a.date ? new Date(a.date).getTime() : 0;
+    const bTime = b.date ? new Date(b.date).getTime() : 0;
+    return bTime - aTime;
+  });
 }
 
 export async function getPost(slug: string): Promise<Post | null> {

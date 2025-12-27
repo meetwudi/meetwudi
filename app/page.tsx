@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <main className="mx-auto grid min-h-screen w-full max-w-3xl gap-8 px-6 py-16 font-sans">
       <header className="space-y-2">
-        <h1 className="text-4xl font-semibold">Notes from Di</h1>
+        <h1 className="text-4xl font-semibold">The D note</h1>
         <p className="text-base text-zinc-400">
           Mixture of thoughts, believes and rants
         </p>
@@ -36,9 +36,13 @@ export default async function Home() {
             >
               <p className="text-xs uppercase tracking-wide text-zinc-400">{dateLabel}</p>
               <h2 className="text-2xl font-semibold leading-tight">
-                <Link href={`/posts/${post.slug}`} className="hover:underline">
-                  {post.title}
-                </Link>
+                {isSnippet ? (
+                  post.title
+                ) : (
+                  <Link href={`/posts/${post.slug}`} className="hover:underline">
+                    {post.title}
+                  </Link>
+                )}
               </h2>
 
               {isSnippet ? (

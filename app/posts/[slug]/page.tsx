@@ -6,7 +6,7 @@ import { getPost, getPosts } from "@/lib/posts";
 type RouteParams = { slug: string };
 
 type PageProps = {
-  params: RouteParams | Promise<RouteParams>;
+  params: Promise<RouteParams>;
 };
 
 export async function generateStaticParams() {
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${post.title} – Meet Wudi`,
+    title: `${post.title} | The D note`,
     description: post.excerpt,
   };
 }
