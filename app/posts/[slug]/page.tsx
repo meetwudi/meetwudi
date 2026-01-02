@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPost, getPosts } from "@/lib/posts";
+import ProtectedPostContent from "./ProtectedPostContent";
 
 type RouteParams = { slug: string };
 
@@ -55,8 +56,17 @@ export default async function PostPage({ params }: PageProps) {
               : "Draft"}
           </p>
           <h1 className="text-4xl font-semibold leading-tight">{post.title}</h1>
+          {post.protected && (
+            <span className="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-200">
+              Protected
+            </span>
+          )}
         </div>
-        <div className="markdown text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: post.content }} />
+        {post.protected ? (
+          <ProtectedPostContent content={post.content} />
+        ) : (
+          <div className="markdown text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: post.content }} />
+        )}
       </article>
     </main>
   );

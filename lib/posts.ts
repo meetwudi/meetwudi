@@ -12,6 +12,7 @@ export type PostSummary = {
   excerpt: string;
   type: "post" | "snippet";
   contentHtml?: string;
+  protected: boolean;
 };
 
 export type Post = PostSummary & {
@@ -61,6 +62,7 @@ export async function getPosts(): Promise<PostSummary[]> {
       const excerpt = (data.excerpt as string | undefined) ?? buildExcerpt(content);
       const type = data.type === "snippet" ? "snippet" : "post";
       const contentHtml = type === "snippet" ? (marked.parse(content, { async: false }) as string) : undefined;
+      const isProtected = Boolean(data.protected);
 
       return {
         slug,
@@ -68,6 +70,7 @@ export async function getPosts(): Promise<PostSummary[]> {
         date,
         excerpt,
         type,
+        protected: isProtected,
         ...(contentHtml !== undefined ? { contentHtml } : {}),
       } as PostSummary;
     }),
@@ -90,6 +93,7 @@ export async function getPost(slug: string): Promise<Post | null> {
 
   const { data, content } = matter(file);
   const html = marked.parse(content, { async: false });
+  const isProtected = Boolean(data.protected);
 
   return {
     slug,
@@ -97,6 +101,7 @@ export async function getPost(slug: string): Promise<Post | null> {
     date: data.date as string | undefined,
     excerpt: (data.excerpt as string | undefined) ?? buildExcerpt(content),
     type: data.type === "snippet" ? "snippet" : "post",
+    protected: isProtected,
     contentHtml: html as string,
     content: html as string,
   };

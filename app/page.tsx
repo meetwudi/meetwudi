@@ -35,15 +35,22 @@ export default async function Home() {
               className="rounded-lg border border-white/10 bg-white/5 p-5 transition hover:border-white/30"
             >
               <p className="text-xs uppercase tracking-wide text-zinc-400">{dateLabel}</p>
-              <h2 className="text-2xl font-semibold leading-tight">
-                {isSnippet ? (
-                  post.title
-                ) : (
-                  <Link href={`/posts/${post.slug}`} className="hover:underline">
-                    {post.title}
-                  </Link>
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 className="text-2xl font-semibold leading-tight">
+                  {isSnippet ? (
+                    post.title
+                  ) : (
+                    <Link href={`/posts/${post.slug}`} className="hover:underline">
+                      {post.title}
+                    </Link>
+                  )}
+                </h2>
+                {post.protected && (
+                  <span className="rounded-full border border-white/10 bg-white/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-zinc-200">
+                    Protected
+                  </span>
                 )}
-              </h2>
+              </div>
 
               {isSnippet ? (
                 <div className="markdown mt-3 text-base" dangerouslySetInnerHTML={{ __html: post.contentHtml ?? post.excerpt }} />
