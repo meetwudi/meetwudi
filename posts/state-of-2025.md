@@ -1,7 +1,6 @@
 ---
 title: "State of my 2025"
 date: "2026-01-01"
-excerpt: "A retrospective on the year my proessional operating system failed. From the legibility of execution to the fog of narrative debt, and the shift from intelligence-driven interest to wisdom-driven purpose."
 protected: true
 ---
 
