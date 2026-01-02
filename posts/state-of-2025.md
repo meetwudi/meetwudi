@@ -27,11 +27,13 @@ I started to map this friction onto a simple 2x2 matrix:
 * **Delivery:** The work that compounds through execution. Systems that run, things that ship, feedback that doesn’t lie.  
 * **Narrative:** The work of shared understanding. Why something matters, how pieces fit together, and where we are going.
 
-**Waymo (The Safety Team)** sat in a specific quadrant: **High Delivery, Low Narrative Cost.** The story of "why safety matters" was settled long before I arrived. We didn't have to re-litigate the mission every day. Progress was slow, but concrete. The story didn’t eat the work.
+For a long time, **Waymo (The Safety Team)** sat in a specific quadrant: **High Delivery, Low Narrative Cost.** The story of "why safety matters" was settled. We didn't have to re-litigate the mission every day. Progress was slow, but concrete.
 
-**OpenAI** sits in the opposite quadrant: **Uneven Delivery, High Narrative Cost.** AI is structurally uncertain. Narratives are formed, contested, and revised in real-time. Because the boundaries of *what* we are shipping aren't always explicit, the narrative expands to compensate.
+But eventually, that phase ended. The narrative became unstable, the cost of alignment spiked, and the legibility vanished. That shift—from legible execution to high-narrative ambiguity—is actually where I burnt out. I left because I didn't yet possess the tools to operate when the story became the work.
 
-The exhaustion I felt wasn't about capability; it was about the **switching cost**. In previous roles, I anchored on delivery. Here, I have to toggle between narrative-heavy alignment and execution-heavy building, sometimes within the same hour. I realized that operating across this boundary is a distinct skill—one I am still learning.
+**OpenAI** sits natively in that volatile quadrant: **Uneven Delivery, High Narrative Cost.** AI is structurally uncertain. Narratives are formed, contested, and revised in real-time. Because the boundaries of *what* we are shipping aren't always explicit, the narrative expands to compensate.
+
+The difference this time is that I recognize the game. The exhaustion I feel isn't burnout; it's the **learning curve** of a new skill. In previous roles, I tried to brute-force narrative problems with execution. Here, I am learning to toggle between narrative-heavy alignment and execution-heavy building, sometimes within the same hour. I am learning to survive the instability that used to break me.
 
 ## **Narrative Debt**
 
