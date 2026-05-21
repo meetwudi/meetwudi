@@ -721,6 +721,7 @@ blockquote {
 
 .section-grid > div:first-child,
 .section-heading {
+  align-content: start;
   display: grid;
   gap: 14px;
 }
@@ -730,10 +731,30 @@ blockquote {
   gap: 20px;
 }
 
+.shift-section {
+  align-items: start;
+}
+
+.shift-copy strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.shift-principle {
+  border-left: 3px solid var(--accent);
+  color: var(--fg);
+  font-weight: 700;
+  padding-left: 16px;
+}
+
 .section-block {
   display: grid;
   gap: 32px;
   padding: 56px 0;
+}
+
+.section-cta {
+  display: flex;
 }
 
 .capability-grid,

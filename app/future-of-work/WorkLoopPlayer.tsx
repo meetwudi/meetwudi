@@ -38,7 +38,7 @@ const screens: WorkLoopScreen[] = [
     title: "Use feedback to improve the next run",
     body: "Corrections become updated instructions instead of disappearing into memory.",
     items: ["Feedback captured", "Instructions updated", "Next run clearer", "Pattern learned"],
-    note: "Excellence is good work, improved, and repeated.",
+    note: "Excellence is good work done, improved, and repeated.",
     principle: true,
   },
 ];

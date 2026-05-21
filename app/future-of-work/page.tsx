@@ -114,37 +114,43 @@ export default function FutureOfWorkPage() {
         </div>
       </section>
 
-      <section className="section-band band-soft" id="problem">
-        <div className="section-grid">
+      <section className="section-band band-soft" id="shift">
+        <div className="section-grid shift-section">
           <div>
-            <p className="eyebrow">The problem</p>
-            <h2>Most transformation work starts in the wrong place.</h2>
+            <p className="eyebrow">The shift</p>
+            <h2>&quot;Doing work&quot; -&gt; &quot;Building work&quot;</h2>
           </div>
-          <div className="copy-stack">
+          <div className="copy-stack shift-copy">
             <p>
-              The problem is usually not the tool. It is the work. The workflow
-              is unclear, the handoffs are hidden, and review happens too late.
+              As the cost of doing knowledge work trends toward zero with AI,
+              the question is no longer just &quot;Can this task get done?&quot;
+              It is &quot;Can this work get better every time it is done?&quot;
             </p>
             <p>
-              If the work is not observable, repeatable, and reviewable, new
-              tools just make confusion move faster.
+              An employee can do good work once. A tool can help them do it
+              faster twice. But by the 100th time, with a different person, a
+              new hire, or a changed customer situation,{" "}
+              <strong>the quality often resets.</strong>
+            </p>
+            <p>
+              The goal of the Future of Work initiative is to make the work
+              itself improve: clearer inputs, better instructions, visible
+              review points, useful artifacts, and feedback that improves the
+              next time the work is done.
+            </p>
+            <p>
+              What we offer here is a diagnostic: we look at one real workflow,
+              find where it is unclear or hard to repeat, and help turn it into
+              work that can be reviewed, improved, and trusted.
+            </p>
+            <p className="shift-principle">
+              Excellence is good work done, improved, and repeated.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section-band band-white" aria-label="Operating principle">
-        <div className="excellence-band">
-          <p className="eyebrow">Operating principle</p>
-          <h2>Excellence is good work, improved, and repeated.</h2>
-          <p>
-            A workflow gets stronger when the team can define it, run it with
-            review, capture what happened, and make the next run better.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-band band-soft pilot-band" id="pilot">
+      <section className="section-band band-white pilot-band" id="pilot">
         <div className="pilot-card">
           <div>
             <p className="eyebrow">Early partner pilot</p>
@@ -160,7 +166,7 @@ export default function FutureOfWorkPage() {
         </div>
       </section>
 
-      <section className="section-band band-white">
+      <section className="section-band band-soft">
         <div className="section-block">
           <div className="section-heading">
             <p className="eyebrow">What changes</p>
@@ -177,7 +183,7 @@ export default function FutureOfWorkPage() {
         </div>
       </section>
 
-      <section className="section-band band-soft" id="how-it-works">
+      <section className="section-band band-white" id="how-it-works">
         <div className="section-block">
           <div className="section-heading">
             <p className="eyebrow">How it works</p>
@@ -191,10 +197,15 @@ export default function FutureOfWorkPage() {
               </li>
             ))}
           </ol>
+          <div className="section-cta">
+            <a className="button primary" href="#interest">
+              I am interested
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="section-band band-white">
+      <section className="section-band band-soft">
         <div className="section-grid">
           <div>
             <p className="eyebrow">Use cases</p>
@@ -210,7 +221,7 @@ export default function FutureOfWorkPage() {
         </div>
       </section>
 
-      <section className="section-band band-soft">
+      <section className="section-band band-white">
         <div className="section-grid stewardship">
           <div>
             <p className="eyebrow">Human stewardship</p>
@@ -230,7 +241,7 @@ export default function FutureOfWorkPage() {
         </div>
       </section>
 
-      <section className="section-band band-white" id="interest">
+      <section className="section-band band-soft" id="interest">
         <div className="section-grid form-section">
           <div>
             <p className="eyebrow">Interest form</p>
@@ -245,7 +256,7 @@ export default function FutureOfWorkPage() {
         </div>
       </section>
 
-      <section className="section-band band-soft">
+      <section className="section-band band-white">
         <div className="section-block faq-section">
           <div className="section-heading">
             <p className="eyebrow">FAQ</p>
