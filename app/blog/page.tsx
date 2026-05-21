@@ -13,7 +13,7 @@ export default async function BlogHome() {
     <main className="blog-shell">
       <header className="blog-header">
         <Link href="/future-of-work" className="blog-back-link">
-          Future of Work Harness
+          Future of Work initiative
         </Link>
         <h1>The D note</h1>
         <p>Mixture of thoughts, beliefs, and rants</p>

@@ -18,7 +18,7 @@ const BUTTONDOWN_SUBSCRIBERS_URL =
   "https://api.buttondown.com/v1/subscribers";
 const RESEND_EMAILS_URL = "https://api.resend.com/emails";
 const NOTIFICATION_TO = "meetwudi@gmail.com";
-const DEFAULT_FROM = "Future of Work Harness <onboarding@resend.dev>";
+const DEFAULT_FROM = "Future of Work initiative <onboarding@resend.dev>";
 
 function stringValue(value: unknown, maxLength = 1000) {
   if (typeof value !== "string") {
@@ -68,7 +68,7 @@ function submissionText(
   submission: ReturnType<typeof createSubmission>,
 ) {
   return [
-    "New Future of Work Harness interest",
+    "New Future of Work initiative interest",
     "",
     `Name: ${submission.name || "-"}`,
     `Email: ${email}`,
@@ -82,7 +82,7 @@ function submissionText(
     "Workflow:",
     submission.workflow,
     "",
-    "AI concern:",
+    "Concern:",
     submission.ai_concern || "-",
     "",
     `Page: ${submission.page_path || "-"}`,
@@ -104,14 +104,14 @@ function submissionHtml(
     ["Business type", submission.business_type || "-"],
     ["Interest type", submission.interest_type.join(", ") || "-"],
     ["Workflow", submission.workflow],
-    ["AI concern", submission.ai_concern || "-"],
+    ["Concern", submission.ai_concern || "-"],
     ["Page", submission.page_path || "-"],
     ["Submitted", submission.submitted_at],
   ];
 
   return `
     <div style="font-family: Arial, sans-serif; color: #181d26; line-height: 1.5;">
-      <h1 style="font-size: 22px;">New Future of Work Harness interest</h1>
+      <h1 style="font-size: 22px;">New Future of Work initiative interest</h1>
       <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
         <tbody>
           ${rows
@@ -173,7 +173,7 @@ async function saveToButtondown(
         fow_interest: submission,
       },
       notes: [
-        "Future of Work Harness interest",
+        "Future of Work initiative interest",
         submission.name && `Name: ${submission.name}`,
         submission.company_role && `Company / role: ${submission.company_role}`,
         submission.company && `Company: ${submission.company}`,

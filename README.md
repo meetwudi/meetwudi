@@ -6,5 +6,5 @@ Set `RESEND_API_KEY` in local and Vercel environments so the form can email each
 
 Optional overrides:
 
-- `RESEND_FROM_EMAIL`, defaulting to `Future of Work Harness <onboarding@resend.dev>`
+- `RESEND_FROM_EMAIL`, defaulting to `Future of Work initiative <onboarding@resend.dev>`
 - `FOW_INTEREST_TO_EMAIL`, defaulting to `meetwudi@gmail.com`

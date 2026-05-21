@@ -49,8 +49,8 @@ export function InterestForm() {
         <p className="eyebrow">Interest submitted</p>
         <h3>Thank you.</h3>
         <p>
-          I&apos;ll review your workflow and reach out if there is a strong fit
-          for an early partner conversation.
+          Your workflow will be reviewed, and you&apos;ll hear back if there is a
+          strong fit for an early partner conversation.
         </p>
       </div>
     );
@@ -89,8 +89,8 @@ export function InterestForm() {
       <label>
         <span>Example workflow to build or govern</span>
         <small>
-          Govern = make it reviewable. Imagine AI drafts customer replies or
-          checks invoices, while a human approves the risky parts.
+          Govern = make it reviewable. Imagine customer replies or invoice
+          checks where the risky parts still need human approval.
         </small>
         <textarea
           name="workflow"
@@ -103,7 +103,7 @@ export function InterestForm() {
       {error && <p className="form-error">{error}</p>}
 
       <button type="submit" className="button primary" disabled={isSubmitting}>
-        {isSubmitting ? "Submitting..." : "Submit interest"}
+        {isSubmitting ? "Submitting..." : "I am interested"}
       </button>
     </form>
   );
