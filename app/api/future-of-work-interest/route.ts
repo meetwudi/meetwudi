@@ -16,6 +16,8 @@ type InterestPayload = {
 
 const BUTTONDOWN_SUBSCRIBERS_URL =
   "https://api.buttondown.com/v1/subscribers";
+const BUTTONDOWN_EMBED_SUBSCRIBE_URL =
+  "https://buttondown.com/api/emails/embed-subscribe/future-of-work";
 const RESEND_EMAILS_URL = "https://api.resend.com/emails";
 const NOTIFICATION_TO = "meetwudi@gmail.com";
 const DEFAULT_FROM = "Future of Work initiative <onboarding@resend.dev>";
@@ -154,7 +156,23 @@ async function saveToButtondown(
   const apiKey = process.env.BUTTONDOWN_API_KEY;
 
   if (!apiKey) {
-    return { skipped: true, reason: "BUTTONDOWN_API_KEY is not configured." };
+    const response = await fetch(BUTTONDOWN_EMBED_SUBSCRIBE_URL, {
+      method: "POST",
+      body: new URLSearchParams({
+        email,
+      }),
+    });
+
+    if (!response.ok) {
+      const detail = await response.text();
+
+      return {
+        ok: false,
+        reason: `Buttondown embed rejected the submission: ${detail}`,
+      };
+    }
+
+    return { ok: true };
   }
 
   const response = await fetch(BUTTONDOWN_SUBSCRIBERS_URL, {

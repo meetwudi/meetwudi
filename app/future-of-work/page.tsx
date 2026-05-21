@@ -261,23 +261,6 @@ export default function FutureOfWorkPage() {
           </div>
         </div>
       </section>
-
-      <footer className="section-band band-white">
-        <div className="footer-cta">
-          <div>
-            <p className="eyebrow">Future of Work initiative</p>
-            <h2>
-              Make work clear enough to improve and human enough for teams to
-              trust.
-            </h2>
-          </div>
-          <div className="footer-actions">
-            <a className="button primary" href="#interest">
-              I am interested
-            </a>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

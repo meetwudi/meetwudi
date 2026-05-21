@@ -2,7 +2,7 @@ I’m here to create real relief for ordinary people—help that makes life clea
 
 ## Future of Work interest form
 
-Set `RESEND_API_KEY` in local and Vercel environments so the form can email each submission. Optionally set `BUTTONDOWN_API_KEY` to also store submitted workflow details in Buttondown subscriber metadata under `fow_interest` and tag the subscriber with `future-of-work-interest`.
+Set `RESEND_API_KEY` in local and Vercel environments so the form can email each submission. Submitted emails are subscribed through the public Buttondown embed endpoint. Optionally set `BUTTONDOWN_API_KEY` to store submitted details in Buttondown subscriber metadata under `fow_interest` and tag the subscriber with `future-of-work-interest`.
 
 Optional overrides:
 
