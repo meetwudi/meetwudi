@@ -13,6 +13,7 @@
   --accent-hover: #254fad;
   --accent-on: #ffffff;
   --success: #006400;
+  --danger: #b42318;
   --font-sans: Haas, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas,
     monospace;
@@ -168,6 +169,7 @@ h3 {
 }
 
 .hero-subhead,
+.hero-note,
 .copy-stack,
 .section-grid > div > p,
 .pilot-card p,
@@ -183,6 +185,10 @@ h3 {
 
 .hero-subhead {
   max-width: 720px;
+}
+
+.hero-note {
+  max-width: 640px;
 }
 
 .cta-row,
@@ -500,6 +506,13 @@ blockquote {
   letter-spacing: 0.12px;
 }
 
+.interest-form small {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.08px;
+  line-height: 1.4;
+}
+
 .interest-form input,
 .interest-form select,
 .interest-form textarea {
@@ -548,6 +561,13 @@ blockquote {
 .checkbox-row span {
   color: var(--fg-2);
   font-weight: 500;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
 }
 
 .success-card {

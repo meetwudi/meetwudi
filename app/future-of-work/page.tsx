@@ -3,39 +3,38 @@ import { InterestForm } from "./InterestForm";
 
 export const metadata = {
   title: "Future of Work Harness",
-  description:
-    "Make your business AI-ready without making your people feel replaceable.",
+  description: "Transform work. Don't replace people.",
 };
 
 const capabilities = [
   {
     title: "Observable",
-    copy: "Leaders can see what happened, what inputs were used, and what changed.",
+    copy: "See the inputs, steps, artifacts, decisions, and review points.",
   },
   {
     title: "Repeatable",
-    copy: "Teams turn recurring work into clear steps instead of one-off heroics.",
+    copy: "Turn recurring work into a run your team can trust and improve.",
   },
   {
     title: "Reviewable",
-    copy: "Human checkpoints are built into the workflow before risky outputs move forward.",
+    copy: "Keep human judgment in the places where quality and trust matter.",
   },
   {
     title: "Improvable",
-    copy: "Feedback becomes better instructions, not a forgotten chat thread.",
+    copy: "Capture feedback and use it to update the next run.",
   },
   {
     title: "Governable",
-    copy: "Approval gates, artifacts, and ownership stay visible as AI assistance grows.",
+    copy: "Make ownership, approval gates, and risk visible from the start.",
   },
 ];
 
 const steps = [
-  "Pick a real workflow",
-  "Map inputs, decisions, and handoffs",
-  "Create a harnessed work definition",
-  "Run it with AI assistance and human review",
-  "Use feedback to improve the next run",
+  "Diagnose one workflow",
+  "Map the inputs, handoffs, and risks",
+  "Create a harnessed run",
+  "Review the run with the people doing the work",
+  "Improve the instructions for next time",
 ];
 
 const useCases = [
@@ -49,24 +48,24 @@ const useCases = [
 
 const faqs = [
   {
-    question: "Is this an agent platform?",
+    question: "Is this a SaaS product?",
     answer:
-      "No. The harness is about making real work clear enough that AI can assist inside boundaries your team understands.",
+      "No. This starts as hands-on diagnosis and pilot work. Software may support the workflow, but the first product is clarity.",
+  },
+  {
+    question: "Is this another AI tool?",
+    answer:
+      "No. The point is to make the work ready for safe AI assistance, not to add another box your team has to manage.",
   },
   {
     question: "Do we need a technical team?",
     answer:
-      "Not for the early workflow assessment. We start with business process, risk, and review points before talking about automation.",
+      "No. The first pass is about the business workflow: what comes in, what happens, who reviews it, and what must improve.",
   },
   {
-    question: "What makes a good pilot workflow?",
+    question: "What makes a good first workflow?",
     answer:
-      "A repeated workflow with clear inputs, visible outputs, a meaningful human review point, and enough volume that improvement matters.",
-  },
-  {
-    question: "Will this replace our existing tools?",
-    answer:
-      "The first goal is not replacement. It is to make the work easier to observe, review, and improve while fitting into the way the team already operates.",
+      "Something repeated, important, a little messy, and painful enough that better review and clearer instructions would matter.",
   },
 ];
 
@@ -86,15 +85,16 @@ export default function FutureOfWorkPage() {
 
       <section className="hero section-grid">
         <div className="hero-copy">
-          <p className="eyebrow">AI transformation for real operating teams</p>
-          <h1>
-            Make your business AI-ready without making your people feel
-            replaceable.
-          </h1>
+          <p className="eyebrow">AI transformation diagnosis for real teams</p>
+          <h1>Transform work. Don&apos;t replace people.</h1>
           <p className="hero-subhead">
-            Most businesses know they need AI. The hard part is turning
-            everyday work into something AI can help with safely: clear inputs,
-            visible runs, human review, feedback, and improvement over time.
+            I help founders and operators find where AI can safely help real
+            workflows: inputs, handoffs, review points, artifacts, and feedback.
+          </p>
+          <p className="hero-note">
+            Not another SaaS dashboard. Not another AI tool. A practical way to
+            drop into the work, diagnose what is unclear, and pilot a better
+            operating loop.
           </p>
           <div className="cta-row">
             <a className="button primary" href="#interest">
@@ -141,18 +141,16 @@ export default function FutureOfWorkPage() {
       <section className="section-grid" id="problem">
         <div>
           <p className="eyebrow">The problem</p>
-          <h2>AI is easy to demo and hard to operate.</h2>
+          <h2>Most AI projects start in the wrong place.</h2>
         </div>
         <div className="copy-stack">
           <p>
-            Real businesses run on context, judgment, exceptions, approvals,
-            customer history, and trust. When that work lives only in messages,
-            meetings, and memory, AI has no safe shape to assist.
+            The problem is usually not the model. It is the work. The workflow
+            is unclear, the handoffs are hidden, and review happens too late.
           </p>
           <p>
-            Teams need a way to make work visible without turning people into
-            replaceable parts. The harness gives AI a role inside the workflow,
-            while keeping people responsible for judgment and improvement.
+            If the work is not observable, repeatable, and reviewable, AI just
+            makes confusion move faster.
           </p>
         </div>
       </section>
@@ -160,7 +158,7 @@ export default function FutureOfWorkPage() {
       <section className="section-block">
         <div className="section-heading">
           <p className="eyebrow">What the harness does</p>
-          <h2>It turns recurring work into a managed operating loop.</h2>
+          <h2>Make the work AI-ready before adding more AI.</h2>
         </div>
         <div className="capability-grid">
           {capabilities.map((capability) => (
@@ -174,20 +172,20 @@ export default function FutureOfWorkPage() {
 
       <section className="quote-band">
         <div>
-          <p className="eyebrow">Not agents / not replacement</p>
-          <h2>We do not start by asking what AI can take over.</h2>
+          <p className="eyebrow">Not software-first</p>
+          <h2>This is diagnosis before tooling.</h2>
         </div>
         <p>
-          We start by asking what work needs clearer inputs, better review,
-          more consistent handoffs, and a better way to learn from each run.
-          AI can help, but the operating system stays human-led.
+          I drop into one real workflow and help make it legible: what the work
+          is, how it runs, where humans review, what artifacts matter, and how
+          the next run gets better.
         </p>
       </section>
 
       <section className="section-block" id="how-it-works">
         <div className="section-heading">
           <p className="eyebrow">How it works</p>
-          <h2>A practical path from messy workflow to reviewed AI assistance.</h2>
+          <h2>A short diagnostic, then a small pilot.</h2>
         </div>
         <ol className="step-list">
           {steps.map((step, index) => (
@@ -216,18 +214,16 @@ export default function FutureOfWorkPage() {
       <section className="section-grid stewardship">
         <div>
           <p className="eyebrow">Human stewardship</p>
-          <h2>Employee trust is part of the system design.</h2>
+          <h2>Change the work, not the worker.</h2>
         </div>
         <div className="copy-stack">
           <p>
-            People are more likely to adopt AI when they can see where it helps,
-            where it stops, and how their feedback changes the work. The harness
-            makes those boundaries explicit.
+            People trust AI more when they can see where it helps, where it
+            stops, and how their feedback changes the next run.
           </p>
           <p>
-            Managers get a calmer way to introduce AI: not as a surprise
-            replacement story, but as a shared improvement process for work the
-            team already understands.
+            The goal is not to make employees feel inspected or replaceable. The
+            goal is to make the work clearer, safer, and easier to improve.
           </p>
         </div>
       </section>
@@ -235,11 +231,10 @@ export default function FutureOfWorkPage() {
       <section className="pilot-card" id="pilot">
         <div>
           <p className="eyebrow">Early partner pilot</p>
-          <h2>We are looking for practical teams with real workflows.</h2>
+          <h2>Bring one workflow that matters.</h2>
           <p>
-            Good pilots have a recurring workflow, a team that cares about
-            quality, and a leader willing to improve the work in the open. The
-            goal is a small, reviewable operating loop, not a broad AI rollout.
+            A good pilot has repeated work, visible risk, and a leader willing
+            to improve the workflow with the people who already do it.
           </p>
         </div>
         <a className="button primary" href="#interest">
@@ -250,10 +245,11 @@ export default function FutureOfWorkPage() {
       <section className="section-grid form-section" id="interest">
         <div>
           <p className="eyebrow">Interest form</p>
-          <h2>Tell us where AI assistance needs a safer operating shape.</h2>
+          <h2>Share one workflow.</h2>
           <p>
-            Submitting interest also adds your work email to the Future of Work
-            newsletter for occasional updates.
+            I will use this to decide whether there is a strong fit for a
+            diagnostic conversation. Your email is also added to the Future of
+            Work newsletter for occasional updates.
           </p>
         </div>
         <InterestForm />
@@ -277,7 +273,7 @@ export default function FutureOfWorkPage() {
       <footer className="footer-cta">
         <div>
           <p className="eyebrow">Future of Work Harness</p>
-          <h2>Make work clear enough for AI to help and safe enough for people to trust.</h2>
+          <h2>Make work clear enough for AI to help and human enough for teams to trust.</h2>
         </div>
         <div className="footer-actions">
           <a className="button primary" href="#interest">

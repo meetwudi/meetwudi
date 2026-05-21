@@ -2,47 +2,44 @@
 
 import { FormEvent, useState } from "react";
 
-const interests = [
-  "Early partner pilot",
-  "AI workflow assessment",
-  "Occasional updates",
-  "Interview / research conversation",
-];
-
 export function InterestForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  async function subscribeToButtondown(email: string) {
-    const body = new FormData();
-    body.append("email", email);
-
-    await fetch(
-      "https://buttondown.com/api/emails/embed-subscribe/future-of-work",
-      {
-        method: "POST",
-        mode: "no-cors",
-        body,
-      },
-    );
-  }
+  const [error, setError] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const email = String(formData.get("email") ?? "").trim();
 
     try {
-      if (email) {
-        await subscribeToButtondown(email);
+      const response = await fetch("/api/future-of-work-interest", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          company_role: formData.get("company_role"),
+          workflow: formData.get("workflow"),
+          page_path: window.location.href,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
       }
-    } finally {
+
       setSubmitted(true);
-      setIsSubmitting(false);
       form.reset();
+    } catch {
+      setError("This did not save. Please try again in a moment.");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -52,8 +49,8 @@ export function InterestForm() {
         <p className="eyebrow">Interest submitted</p>
         <h3>Thank you.</h3>
         <p>
-          We&apos;ll review your workflow and reach out if there is a strong
-          fit for an early partner conversation.
+          I&apos;ll review your workflow and reach out if there is a strong fit
+          for an early partner conversation.
         </p>
       </div>
     );
@@ -78,71 +75,32 @@ export function InterestForm() {
         </label>
       </div>
 
-      <div className="form-grid two">
-        <label>
-          <span>Company</span>
-          <input name="company" type="text" autoComplete="organization" required />
-        </label>
-        <label>
-          <span>Role</span>
-          <input name="role" type="text" autoComplete="organization-title" />
-        </label>
-      </div>
-
-      <div className="form-grid two">
-        <label>
-          <span>Team size</span>
-          <select name="team_size" defaultValue="" required>
-            <option value="" disabled>
-              Select team size
-            </option>
-            <option>1-10</option>
-            <option>11-50</option>
-            <option>51-200</option>
-            <option>201-1,000</option>
-            <option>1,000+</option>
-          </select>
-        </label>
-        <label>
-          <span>Business type</span>
-          <input
-            name="business_type"
-            type="text"
-            placeholder="Services, SaaS, retail, healthcare..."
-          />
-        </label>
-      </div>
-
       <label>
-        <span>Workflow to improve</span>
-        <textarea
-          name="workflow"
-          rows={4}
-          placeholder="Tell us about a workflow your team repeats often."
+        <span>Company / role</span>
+        <input
+          name="company_role"
+          type="text"
+          autoComplete="organization"
+          placeholder="Acme Ops, founder"
           required
         />
       </label>
 
       <label>
-        <span>Biggest concern about adopting AI</span>
+        <span>Example workflow to build or govern</span>
+        <small>
+          Govern = make it reviewable. Imagine AI drafts customer replies or
+          checks invoices, while a human approves the risky parts.
+        </small>
         <textarea
-          name="ai_concern"
+          name="workflow"
           rows={4}
-          placeholder="Safety, quality, employee trust, review, compliance..."
+          placeholder="Example: weekly customer follow-ups, sales research, invoice review..."
+          required
         />
       </label>
 
-      <fieldset>
-        <legend>Interest type</legend>
-        <div className="checkbox-grid">
-          {interests.map((interest) => (
-            <label key={interest} className="checkbox-row">
-              <input name="interest_type" type="checkbox" value={interest} />
-              <span>{interest}</span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
+      {error && <p className="form-error">{error}</p>}
 
       <button type="submit" className="button primary" disabled={isSubmitting}>
         {isSubmitting ? "Submitting..." : "Submit interest"}
