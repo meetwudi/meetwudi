@@ -120,7 +120,6 @@ textarea {
 }
 
 .site-header nav a:hover,
-.footer-link:hover,
 .blog-back-link:hover,
 .blog-read-link:hover {
   color: var(--accent);
@@ -981,12 +980,6 @@ blockquote {
 
 .footer-actions {
   align-items: center;
-}
-
-.footer-link {
-  color: var(--muted);
-  font-size: 15px;
-  font-weight: 600;
 }
 
 .blog-shell {

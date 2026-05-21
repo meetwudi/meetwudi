@@ -275,9 +275,6 @@ export default function FutureOfWorkPage() {
             <a className="button primary" href="#interest">
               I am interested
             </a>
-            <Link href="/__blog" className="footer-link">
-              Read the blog
-            </Link>
           </div>
         </div>
       </footer>
