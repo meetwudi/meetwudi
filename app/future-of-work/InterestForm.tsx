@@ -49,7 +49,7 @@ export function InterestForm() {
         <p className="eyebrow">Interest submitted</p>
         <h3>Thank you.</h3>
         <p>
-          Your workflow will be reviewed, and you&apos;ll hear back if there is a
+          Your interest will be reviewed, and you&apos;ll hear back if there is a
           strong fit for an early partner conversation.
         </p>
       </div>
@@ -87,16 +87,15 @@ export function InterestForm() {
       </label>
 
       <label>
-        <span>Example workflow to build or govern</span>
+        <span>Briefly describe the interest</span>
         <small>
-          Govern = make it reviewable. Imagine customer replies or invoice
-          checks where the risky parts still need human approval.
+          Optionally tell us a bit about what workflows you might want to start
+          building, standardizing, or improving.
         </small>
         <textarea
           name="workflow"
           rows={4}
           placeholder="Example: weekly customer follow-ups, sales research, invoice review..."
-          required
         />
       </label>
 

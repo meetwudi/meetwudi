@@ -79,8 +79,8 @@ function submissionText(
     `Business type: ${submission.business_type || "-"}`,
     `Interest type: ${submission.interest_type.join(", ") || "-"}`,
     "",
-    "Workflow:",
-    submission.workflow,
+    "Interest:",
+    submission.workflow || "-",
     "",
     "Concern:",
     submission.ai_concern || "-",
@@ -103,7 +103,7 @@ function submissionHtml(
     ["Team size", submission.team_size || "-"],
     ["Business type", submission.business_type || "-"],
     ["Interest type", submission.interest_type.join(", ") || "-"],
-    ["Workflow", submission.workflow],
+    ["Interest", submission.workflow || "-"],
     ["Concern", submission.ai_concern || "-"],
     ["Page", submission.page_path || "-"],
     ["Submitted", submission.submitted_at],
@@ -177,7 +177,7 @@ async function saveToButtondown(
         submission.name && `Name: ${submission.name}`,
         submission.company_role && `Company / role: ${submission.company_role}`,
         submission.company && `Company: ${submission.company}`,
-        submission.workflow && `Workflow: ${submission.workflow}`,
+        submission.workflow && `Interest: ${submission.workflow}`,
       ]
         .filter(Boolean)
         .join("\n"),
@@ -246,9 +246,9 @@ export async function POST(request: NextRequest) {
   const email = stringValue(body.email, 320).toLowerCase();
   const submission = createSubmission(body);
 
-  if (!isValidEmail(email) || !submission.workflow) {
+  if (!isValidEmail(email)) {
     return NextResponse.json(
-      { error: "A valid email and workflow are required." },
+      { error: "A valid email is required." },
       { status: 400 },
     );
   }
